@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -8,12 +8,14 @@
 
 :root {
   --border-clr1: #dcdcdc;
+  --border-clr2: #1f1f1f;
+  --clr1: #747474;
   --txt-clr1: #ff6167;
   --txt-clr2: #000;
 }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
 ul {
@@ -31,6 +33,11 @@ ul {
   justify-content: space-between;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   padding: 1em 0.5em;
   border-bottom: 2px solid var(--border-clr1);
@@ -42,6 +49,17 @@ ul {
 
 .logo-container {
   width: 60px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.brand-text {
+  font-size: 1.5rem;
+  color: var(--txt-clr1);
 }
 
 .logo {
@@ -63,4 +81,98 @@ ul {
 .nav-items > ul > li:hover {
   cursor: pointer;
   color: var(--txt-clr1);
+}
+
+.body {
+  padding: 1.5em 0;
+}
+
+.search-bar {
+  border: 2px solid var(--border-clr2);
+  border-radius: 2em;
+  width: 50%;
+  min-width: 200px;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  padding: 0.2em 1em;
+  justify-content: space-between;
+}
+
+.search-icon {
+  width: 5%;
+}
+
+.search-icon:hover {
+  cursor: pointer;
+}
+
+.search-icon::after {
+  content: "\f002";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: var(--clr1);
+}
+
+.search-input {
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  padding: 0.5em;
+  width: 90%;
+  color: var(--txt-clr2);
+  font-weight: 500;
+  background-color: transparent;
+}
+
+.res-container {
+  display: grid;
+  gap: 1.5em;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 1.5em 0;
+}
+
+.res-card {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.6em;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.res-card:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.res-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  padding: 0.5em;
+}
+
+.res-details * {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.res-card > .res-card-pic {
+  width: 100%;
+  align-self: center;
+}
+
+.res-card .res-card-pic > img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.res-rating::after {
+  content: "\f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #ffd43b;
 }
