@@ -1,0 +1,28 @@
+{
+  "name": "namaste_food",
+  "version": "1.0.0",
+  "description": "namaste food",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iSubhamMani/namaste_food.git"
+  },
+  "author": "Subham Mani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iSubhamMani/namaste_food/issues"
+  },
+  "homepage": "https://github.com/iSubhamMani/namaste_food#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  }
+}
