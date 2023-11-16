@@ -87,9 +87,35 @@ ul {
   padding: 1.5em 0;
 }
 
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.top-rated-btn {
+  outline: none;
+  border: none;
+  border-radius: 100px;
+  border: 2px solid var(--txt-clr1);
+  background-color: transparent;
+  color: var(--txt-clr1);
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.4em 1em;
+  cursor: pointer;
+  transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+}
+
+.top-rated-btn:hover {
+  background-color: var(--txt-clr1);
+  color: #fff;
+}
+
 .search-bar {
   border: 2px solid var(--border-clr2);
-  border-radius: 2em;
+  border-radius: 100px;
   width: 50%;
   min-width: 200px;
   max-width: 500px;
