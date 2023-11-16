@@ -11,7 +11,7 @@ const Body = () => {
         </div>
         <div className="res-container">
           {resData.map((res) => {
-            return <RestaurantCard data={res} />;
+            return <RestaurantCard key={res.uid} data={res} />;
           })}
         </div>
       </div>

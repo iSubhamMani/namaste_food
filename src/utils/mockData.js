@@ -7,6 +7,7 @@ import {
 
 const resData = [
   {
+    uid: "f454",
     img: HAZRAT_IMG,
     resName: "Hazrat",
     cuisine: "Biriyani, North Indian",
@@ -14,6 +15,7 @@ const resData = [
     estd: "40 MINS",
   },
   {
+    uid: "f172",
     img: ARSALAN_IMG,
     resName: "Arsalan",
     cuisine: "Biriyani, North Indian",
@@ -21,6 +23,7 @@ const resData = [
     estd: "45 MINS",
   },
   {
+    uid: "h899",
     img: PALLI_BANGALI_IMG,
     resName: "Palli Bangali",
     cuisine: "Bengali, Thali",
@@ -28,6 +31,7 @@ const resData = [
     estd: "30 MINS",
   },
   {
+    uid: "1gg8",
     img: DOMINOS_IMG,
     resName: "Domino's",
     cuisine: "Pizza, Italian",
