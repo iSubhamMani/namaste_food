@@ -21,9 +21,15 @@ const Body = () => {
           <div className="top-rated-res">
             <button
               className="top-rated-btn"
-              onClick={() => {
-                const filteredList = listOfRes.filter((res) => res.rating > 4);
-                setListOfRes(filteredList);
+              onClick={(e) => {
+                if (e.target.classList.toggle("active")) {
+                  const filteredList = listOfRes.filter(
+                    (res) => res.rating > 4
+                  );
+                  setListOfRes(filteredList);
+                } else {
+                  setListOfRes(resData);
+                }
               }}
             >
               Top Rated
