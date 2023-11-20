@@ -8,9 +8,7 @@ const RestaurantCard = ({ data }) => {
       </div>
       <div className="res-details">
         <h3 className="res-name">{data.info.name}</h3>
-        <p className="res-cuisine">
-          {data.info.cuisines.map((cuisine) => cuisine + ", ")}
-        </p>
+        <p className="res-cuisine">{data.info.cuisines.join(", ")}</p>
         <span className="res-rating">{data.info.avgRating}</span>
         <span className="estd">{data.info.sla.deliveryTime + " MINS"}</span>
       </div>
