@@ -10,7 +10,7 @@ const Body = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, []); // If empty dependency array, useEffect is called only on the initial render
 
   const fetchData = async () => {
     const data = await fetch(
@@ -29,7 +29,7 @@ const Body = () => {
     );
   };
 
-  return listOfRes.length === 0 ? (
+  return filteredRes.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
