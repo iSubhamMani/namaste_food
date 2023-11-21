@@ -22,10 +22,20 @@ ul {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   margin: 0 auto;
   width: 85%;
   max-width: 1200px;
+}
+
+.menu-container {
+  margin: 0 auto;
+  width: 50%;
+  max-width: 900px;
 }
 
 .row {
@@ -71,6 +81,7 @@ ul {
   gap: 1em;
 }
 
+.nav-items > ul > li > a,
 .nav-items > ul > li {
   font-weight: 500;
   font-size: 1rem;
@@ -78,7 +89,8 @@ ul {
   transition: color 150ms ease-in-out;
 }
 
-.nav-items > ul > li:hover {
+.nav-items > ul > li:hover,
+.nav-items > ul > li > a:hover {
   cursor: pointer;
   color: var(--txt-clr1);
 }
@@ -203,6 +215,16 @@ ul {
   text-overflow: ellipsis;
 }
 
+.res-name {
+  color: #1f1f1f;
+  font-size: 1.2rem;
+}
+
+.res-cuisine {
+  color: #383838;
+  font-weight: 600;
+}
+
 .res-card > .res-card-pic {
   align-self: center;
 }
@@ -213,8 +235,20 @@ ul {
   object-fit: cover;
 }
 
+.res-rating {
+  color: #1f1f1f;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.estd {
+  color: #1f1f1f;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
 .res-rating::after {
-  content: "\f005";
+  content: " \f005";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   color: #ffd43b;
@@ -235,4 +269,78 @@ ul {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   transition: opacity 0.2s ease-in-out;
   background-color: #dcdcdc;
+}
+
+.res-overview {
+  margin-top: 50px;
+  border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 1em;
+}
+
+.name-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.food-overview > p + p {
+  margin-top: 0.5em;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #383838;
+}
+
+.menu {
+  padding-bottom: 100px;
+}
+
+.menu-category {
+  margin-top: 30px;
+}
+
+.menu-category h2 {
+  font-size: 1.2rem;
+  color: #1f1f1f;
+  font-weight: 700;
+}
+
+.menu-list {
+  margin-top: 1em;
+  display: block;
+}
+
+.menu-item {
+  font-size: 0.9rem;
+
+  border-top: 1px solid #b7b7b7;
+  padding: 2em 0;
+}
+
+.menu-item h3 {
+  font-weight: 500;
+}
+
+.collapsable::after {
+  content: "\f078";
+  cursor: pointer;
+  padding: 1em;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.collapsable.active::after {
+  content: "\f077";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.category-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0;
+}
+
+.menu-list.collapse {
+  display: none;
 }
