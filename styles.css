@@ -344,3 +344,9 @@ a {
 .menu-list.collapse {
   display: none;
 }
+
+.user-card {
+  padding: 1em;
+  border: 1px solid #747474;
+  margin: 1em;
+}
