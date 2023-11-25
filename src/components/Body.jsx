@@ -2,6 +2,8 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import { RES_LIST_API } from "../utils/constants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   // local state variable
@@ -14,9 +16,7 @@ const Body = () => {
   }, []); // If empty dependency array, useEffect is called only on the initial render
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.511774&lng=88.3998203&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(RES_LIST_API);
 
     const fdata = await data.json();
 
@@ -29,6 +29,12 @@ const Body = () => {
         ?.restaurants
     );
   };
+
+  const onlineStatus = useOnlineStatus();
+  if (!onlineStatus)
+    return (
+      <h1>Looks like you're offline! Please check your internet connection</h1>
+    );
 
   return filteredRes.length === 0 ? (
     <Shimmer />

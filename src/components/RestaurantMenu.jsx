@@ -1,25 +1,11 @@
-import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  const fetchMenu = async () => {
-    const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1458004&lng=79.0881546&restaurantId=" +
-        +resId +
-        "&catalog_qa=undefined&submitAction=ENTER"
-    );
-
-    const fdata = await data.json();
-    setResInfo(fdata.data);
-  };
+  const resInfo = useRestaurantMenu(resId);
 
   if (resInfo === null) return <Shimmer />;
 
@@ -46,7 +32,7 @@ const RestaurantMenu = () => {
           {menu.slice(1, -3).map((category, index) => {
             const items = category.card?.card?.itemCards;
             return (
-              <div className=" menu-category">
+              <div className="menu-category">
                 <div className="category-heading">
                   <h2>{`${++index}. ${category.card?.card?.title} (${
                     items?.length

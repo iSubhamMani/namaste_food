@@ -1,10 +1,10 @@
-import { mediaAssetsURL } from "../utils/constants";
+import { MEDIA_ASSETS_URL } from "../utils/constants";
 
 const RestaurantCard = ({ data }) => {
   return (
     <div className="res-card">
       <div className="res-card-pic">
-        <img src={mediaAssetsURL + data.info.cloudinaryImageId} />
+        <img src={MEDIA_ASSETS_URL + data.info.cloudinaryImageId} />
       </div>
       <div className="res-details">
         <h3 className="res-name">{data.info.name}</h3>
