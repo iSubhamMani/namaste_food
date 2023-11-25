@@ -39,12 +39,15 @@ const Body = () => {
   return filteredRes.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="container column">
-        <div className="filter-container">
-          <div className="search-bar">
+    <div className="body mt-4">
+      <div className="w-[70%] mx-auto max-w-screen-xl flex flex-col">
+        <div className="flex gap-4 mt-4 mb-8 items-center ">
+          <div
+            className="search-bar border-2 border-zinc-400 px-4 py-1 flex gap-4 justify-between rounded-full
+           focus-within:border-[#25E28D]"
+          >
             <input
-              className="search-input"
+              className="focus:outline-none"
               type="text"
               placeholder="Search restaurants"
               value={searchText}
@@ -53,7 +56,6 @@ const Body = () => {
               }}
             />
             <span
-              className="search-btn"
               onClick={() => {
                 // Search
                 // Input value
@@ -62,18 +64,27 @@ const Body = () => {
                 );
                 setFilteredRes(filteredRes);
               }}
-            ></span>
+            >
+              <i className="fa-solid fa-magnifying-glass"></i>
+            </span>
           </div>
           <div className="top-rated-res">
             <button
-              className="top-rated-btn"
+              className="px-4 py-1 border-2 transition ease-in-out hover:scale-110
+               hover:bg-[#25E28D] duration-200 hover:text-white whitespace-nowrap hover:shadow-sm
+               "
+              style={{ borderRadius: 100 + "px" }}
               onClick={(e) => {
                 if (e.target.classList.toggle("active")) {
+                  e.target.style.backgroundColor = "#25E28D";
+                  e.target.style.color = "#FFF";
                   const filteredList = listOfRes.filter(
                     (res) => res.info.avgRating >= 4.4
                   );
                   setFilteredRes(filteredList);
                 } else {
+                  e.target.style.backgroundColor = "transparent";
+                  e.target.style.color = "#000";
                   setFilteredRes(listOfRes);
                 }
               }}
@@ -83,7 +94,13 @@ const Body = () => {
           </div>
         </div>
 
-        <div className="res-container">
+        <div
+          className="res-container gap-5"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          }}
+        >
           {filteredRes.map((res) => {
             return (
               <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
