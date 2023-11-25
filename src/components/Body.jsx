@@ -39,12 +39,12 @@ const Body = () => {
   return filteredRes.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body mt-4">
+    <div className="body mt-4 mb-[50px]">
       <div className="w-[70%] mx-auto max-w-screen-xl flex flex-col">
         <div className="flex gap-4 mt-4 mb-8 items-center ">
           <div
             className="search-bar border-2 border-zinc-400 px-4 py-1 flex gap-4 justify-between rounded-full
-           focus-within:border-[#25E28D]"
+           focus-within:border-[#1a8756] shadow-md"
           >
             <input
               className="focus:outline-none"
@@ -70,21 +70,21 @@ const Body = () => {
           </div>
           <div className="top-rated-res">
             <button
-              className="px-4 py-1 border-2 transition ease-in-out hover:scale-110
-               hover:bg-[#25E28D] duration-200 hover:text-white whitespace-nowrap hover:shadow-sm
+              className="px-4 py-1 transition ease-in-out shadow-md
+               whitespace-nowrap font-medium text-zinc-600
                "
               style={{ borderRadius: 100 + "px" }}
               onClick={(e) => {
                 if (e.target.classList.toggle("active")) {
-                  e.target.style.backgroundColor = "#25E28D";
-                  e.target.style.color = "#FFF";
+                  e.target.style.backgroundColor = "#1a8756";
+                  e.target.style.color = "#fef08ad9";
                   const filteredList = listOfRes.filter(
                     (res) => res.info.avgRating >= 4.4
                   );
                   setFilteredRes(filteredList);
                 } else {
                   e.target.style.backgroundColor = "transparent";
-                  e.target.style.color = "#000";
+                  e.target.style.color = "rgb(82,82,91)";
                   setFilteredRes(listOfRes);
                 }
               }}
