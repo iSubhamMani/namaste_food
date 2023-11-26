@@ -27,7 +27,7 @@ const RestaurantCard = ({ data }) => {
           {data.info.avgRating} <i class="fa-solid fa-star"></i>
         </span>
         <span className="estd text-zinc-600 font-medium flex items-center gap-1">
-          <i class="fa-regular fa-clock"></i>{" "}
+          <i className="fa-regular fa-clock"></i>{" "}
           {data.info.sla.deliveryTime + " MINS"}
         </span>
       </div>
