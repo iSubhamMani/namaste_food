@@ -21,15 +21,19 @@ const RestaurantMenu = () => {
         <div className="res-overview">
           <div className="name-rating flex justify-between items-center">
             <h2 className="font-semibold text-3xl text-black">{name}</h2>
-            <span className="py-[0.2em] px-2 text-[#143928] bg-yellow-200 font-medium">
+            <span className="py-[0.2em] px-2 text-white bg-[#1a8756] font-medium">
               {avgRating} <i className="fa-solid fa-star"></i>
             </span>
           </div>
           <div className="food-overview flex flex-col gap-1 mt-4 mb-[50px]">
             <span className="text-zinc-600 ">{cuisines?.join(", ")}</span>
-            <span className="text-[#143928] font-medium ">{areaName}</span>
+            <span className="text-zinc-600 font-medium flex gap-[0.4em] items-center">
+              <i className="fa-solid fa-location-dot"></i>
+              {areaName}
+            </span>
             <div>
-              <span className="py-[0.2em] px-2  text-[#143928] bg-yellow-200 font-medium">
+              <span className="py-[0.2em] font-bold text-lg flex gap-[0.4em] items-center">
+                <i className="fa-solid fa-bolt"></i>
                 {costForTwoMessage}
               </span>
             </div>
@@ -67,16 +71,26 @@ const RestaurantMenu = () => {
                           <h3 className="text-lg font-medium">
                             {item.card?.info?.name}
                           </h3>
-                          <span className="py-[0.2em] px-2 text-lg font-medium text-[#143928] bg-yellow-200">
-                            ₹ {item.card?.info?.price / 100}
+                          <span className="py-[0.2em] text-lg font-medium">
+                            ₹{" "}
+                            {(item.card?.info?.price ||
+                              item.card?.info?.defaultPrice) / 100}
                           </span>
                         </div>
                         <div className="w-32 h-32 rounded-lg overflow-hidden">
-                          <img
-                            src={MEDIA_ASSETS_URL + item.card?.info?.imageId}
-                            alt=""
-                            className="w-full h-full object-cover"
-                          />
+                          {item.card?.info?.imageId !== undefined ? (
+                            <img
+                              src={MEDIA_ASSETS_URL + item.card?.info?.imageId}
+                              alt=""
+                              className="w-full h-full object-cover"
+                            />
+                          ) : (
+                            <img
+                              src="https://assets-global.website-files.com/64a26163e7f60775e3548a04/64a287398e53b9cd0c94f13a_placeholder.png"
+                              alt=""
+                              className="w-full h-full object-cover"
+                            />
+                          )}
                         </div>
                       </li>
                     );

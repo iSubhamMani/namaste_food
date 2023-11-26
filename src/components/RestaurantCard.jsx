@@ -14,17 +14,17 @@ const RestaurantCard = ({ data }) => {
         />
       </div>
       <div className="res-details px-2 py-4 flex flex-col justify-between gap-2">
-        <h3 className="res-name text-lg text-[#143928] font-bold text-ellipsis whitespace-nowrap overflow-hidden">
+        <h3 className="res-name text-xl text-[#143928] font-bold text-ellipsis whitespace-nowrap overflow-hidden">
           {data.info.name}
         </h3>
         <p className="res-cuisine text-zinc-600 font-normal text-ellipsis whitespace-nowrap overflow-hidden">
           {data.info.cuisines.join(", ")}
         </p>
         <span
-          className="res-rating py-[0.2em] px-2 text-[#143928] w-min bg-yellow-200 flex items-center gap-1 font-medium
+          className="res-rating py-[0.2em] px-[0.5em] text-white w-min bg-[#1a8756] flex items-center gap-1 font-medium
         "
         >
-          {data.info.avgRating} <i class="fa-solid fa-star"></i>
+          {data.info.avgRating} <i className="fa-solid fa-star"></i>
         </span>
         <span className="estd text-zinc-600 font-medium flex items-center gap-1">
           <i className="fa-regular fa-clock"></i>{" "}
