@@ -71,11 +71,28 @@ const RestaurantMenu = () => {
                           <h3 className="text-lg font-medium">
                             {item.card?.info?.name}
                           </h3>
-                          <span className="py-[0.2em] text-lg font-medium">
-                            ₹{" "}
-                            {(item.card?.info?.price ||
-                              item.card?.info?.defaultPrice) / 100}
-                          </span>
+                          <div className="flex flex-col  gap-[0.4em]">
+                            <span className="py-[0.2em] text-lg font-bold">
+                              ₹{" "}
+                              {(item.card?.info?.price ||
+                                item.card?.info?.defaultPrice) / 100}
+                            </span>
+                            <div className="flex items-center gap-2">
+                              <span className="py-[0.2em] px-2 text-white bg-[#1a8756] font-medium text-sm flex gap-1 items-center">
+                                {
+                                  item.card?.info?.ratings?.aggregatedRating
+                                    ?.rating
+                                }
+                                <i className="fa-solid fa-star"></i>
+                              </span>
+                              <span className="font-medium text-sm">
+                                {
+                                  item.card?.info?.ratings?.aggregatedRating
+                                    ?.ratingCount
+                                }
+                              </span>
+                            </div>
+                          </div>
                         </div>
                         <div className="w-32 h-32 rounded-lg overflow-hidden">
                           {item.card?.info?.imageId !== undefined ? (
