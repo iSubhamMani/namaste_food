@@ -37,7 +37,9 @@ const RestaurantMenu = () => {
         </div>
         <ul>
           {menu.slice(1, -3).map((category, index) => {
-            const items = category.card?.card?.itemCards;
+            const items =
+              category.card?.card?.itemCards ||
+              category.card?.card?.categories[0]?.itemCards;
             return (
               <div className="menu-category border-t-2 border-gray-300 py-4">
                 <div className="category-heading flex justify-between items-center">
