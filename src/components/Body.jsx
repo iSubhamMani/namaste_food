@@ -4,6 +4,8 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { MEDIA_ASSETS_URL, RES_LIST_API } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { withOffersHeader } from "./RestaurantCard";
+import isObjectEmpty from "../utils/emptyObject";
 
 const Body = () => {
   // local state variable
@@ -11,6 +13,8 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredRes, setFilteredRes] = useState([]);
   const [offersList, setOffersList] = useState([]);
+
+  const RestaurantCardOffers = withOffersHeader(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -134,7 +138,14 @@ const Body = () => {
             {filteredRes.map((res) => {
               return (
                 <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
-                  <RestaurantCard data={res} />
+                  {isObjectEmpty(
+                    res.info.aggregatedDiscountInfoV3 ||
+                      res.info.aggregatedDiscountInfoV2
+                  ) ? (
+                    <RestaurantCard data={res} />
+                  ) : (
+                    <RestaurantCardOffers data={res} />
+                  )}
                 </Link>
               );
             })}

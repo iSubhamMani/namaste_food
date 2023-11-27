@@ -4,12 +4,12 @@ const RestaurantCard = ({ data }) => {
   return (
     <div
       className="res-card shadow-lg min-h-full rounded-lg overflow-hidden transition ease-in-out bg-white
-    hover:opacity-80 duration-300"
+    hover:bg-green-100 duration-300"
     >
       <div className="res-card-pic">
         <img
           src={MEDIA_ASSETS_URL + data.info.cloudinaryImageId}
-          className=" w-full object-cover"
+          className="w-full object-cover"
           style={{ height: 200 + "px" }}
         />
       </div>
@@ -33,6 +33,26 @@ const RestaurantCard = ({ data }) => {
       </div>
     </div>
   );
+};
+
+// Higher Order Component
+
+// input - a restaurant card
+// output - a restaurant card with offers included
+
+export const withOffersHeader = (RestaurantCard) => {
+  return (props) => {
+    const offers =
+      props.data.info.aggregatedDiscountInfoV3 ||
+      props.data.info.aggregatedDiscountInfoV2;
+
+    return (
+      <div>
+        <label className="px-2 py-1 rounded-ss-lg text-[0.9rem] font-bold absolute bg-black text-white">{`${offers.header}  ${offers.subHeader}`}</label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;
