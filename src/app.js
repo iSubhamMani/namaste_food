@@ -2,7 +2,12 @@ import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  ScrollRestoration,
+} from "react-router-dom";
 import About from "./components/About";
 import ContactUs from "./components/contact-us";
 import Error from "./components/Error";
@@ -14,7 +19,7 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Header></Header>
-
+      <ScrollRestoration />
       <Outlet />
     </div>
   );
