@@ -1,21 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.collapsable::after {
-  content: "\f078";
-  cursor: pointer;
-  padding: 1em;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-}
-
-.collapsable.active::after {
-  content: "\f077";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-}
-
-.menu-list.collapse {
-  display: none;
-}

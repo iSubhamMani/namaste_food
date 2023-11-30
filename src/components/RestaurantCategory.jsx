@@ -1,23 +1,22 @@
-import { MEDIA_ASSETS_URL } from "../utils/constants";
-import MenuItem from "./MenuItem";
+import MenuItems from "./MenuItems";
 
-const RestaurantCategory = (props) => {
-  const { items, category } = props.data;
+const RestaurantCategory = ({ data, showItems, setShowIndex, hideItems }) => {
+  const { items, category } = data;
+
+  const handleClick = () => {
+    showItems ? hideItems() : setShowIndex();
+  };
 
   return (
     <div className="menu-category border-t-2 border-gray-300 py-4">
-      <div className="category-heading flex justify-between items-center">
+      <div
+        className="category-heading flex justify-between items-center cursor-pointer"
+        onClick={handleClick}
+      >
         <h2 className="text-xl font-bold text-[#143928]">{`${category?.card?.card?.title} (${items?.length})`}</h2>
-        <span
-          className="collapsable hover:bg-slate-200 py-2 transition ease-in-out duration-200"
-          onClick={(e) => {
-            e.target.classList.toggle("active");
-            const menuList = e.target.parentNode.nextSibling;
-            menuList.classList.toggle("collapse");
-          }}
-        ></span>
+        <i className="fa-solid fa-chevron-down p-1"></i>
       </div>
-      <MenuItem data={items} />
+      {showItems && <MenuItems data={items} />}
     </div>
   );
 };

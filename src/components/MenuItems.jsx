@@ -1,6 +1,6 @@
 import { MEDIA_ASSETS_URL } from "../utils/constants";
 
-const MenuItem = (props) => {
+const MenuItems = (props) => {
   const items = props.data;
   return (
     <ul className="menu-list">
@@ -52,4 +52,4 @@ const MenuItem = (props) => {
   );
 };
 
-export default MenuItem;
+export default MenuItems;
