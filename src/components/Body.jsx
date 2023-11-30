@@ -1,11 +1,12 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { MEDIA_ASSETS_URL, RES_LIST_API } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { withOffersHeader } from "./RestaurantCard";
 import isObjectEmpty from "../utils/emptyObject";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   // local state variable
@@ -42,6 +43,8 @@ const Body = () => {
     return (
       <h1>Looks like you're offline! Please check your internet connection</h1>
     );
+
+  const { setUserName, loggedInUser } = useContext(UserContext);
 
   return filteredRes.length === 0 ? (
     <Shimmer />
@@ -127,6 +130,14 @@ const Body = () => {
                 Top Rated
               </button>
             </div>
+            <input
+              type="text"
+              className="border-zinc-400 border-2 px-2"
+              value={loggedInUser}
+              onChange={(e) => {
+                setUserName(e.target.value);
+              }}
+            />
           </div>
           <div
             className="res-container gap-5"

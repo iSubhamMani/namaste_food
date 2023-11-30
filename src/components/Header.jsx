@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import logo from "../utils/logo.png";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
+  const { loggedInUser } = useContext(UserContext);
 
   return (
     <div className="bg-white p-4 border-b-2 border-gray-40 shadow-lg">
@@ -48,7 +50,7 @@ const Header = () => {
               className="text-[#1a8756] border-b-2 border-b-transparent hover:text-[#143928] whitespace-nowrap font-medium
             transition ease-in-out hover:border-b-2 hover:border-b-[#143928]"
             >
-              Cart
+              {loggedInUser}
             </li>
             <button
               className="text-[#1a8756] border-b-2 border-b-transparent hover:text-[#143928] whitespace-nowrap font-medium
