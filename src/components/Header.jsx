@@ -15,7 +15,7 @@ const Header = () => {
             <img className="w-16" src={logo} />
           </div>
           <div className="brand-container">
-            <h1 className="brand-text whitespace-nowrap text-xl font-medium text-[#1a8756]">
+            <h1 className="brand-text whitespace-nowrap text-xl font-medium text-[#F8366D]">
               Namaste Food
             </h1>
           </div>
@@ -23,38 +23,38 @@ const Header = () => {
         <div className="nav-items">
           <ul className="flex gap-4 ">
             <li
-              className="text-[#1a8756] border-b-2 border-b-transparent hover:text-[#143928] whitespace-nowrap font-medium
-            transition ease-in-out hover:border-b-2 hover:border-b-[#143928]"
+              className="text-[#F8366D] border-b-2 border-b-transparent hover:text-[#3D006B] whitespace-nowrap font-medium
+            transition ease-in-out hover:border-b-2 hover:border-b-[#3D006B]"
             >
               <Link to="/groceries">Grocery</Link>
             </li>
             <li
-              className="text-[#1a8756] border-b-2 border-b-transparent hover:text-[#143928] whitespace-nowrap font-medium
-            transition ease-in-out hover:border-b-2 hover:border-b-[#143928]"
+              className="text-[#F8366D] border-b-2 border-b-transparent hover:text-[#3D006B] whitespace-nowrap font-medium
+            transition ease-in-out hover:border-b-2 hover:border-b-[#3D006B]"
             >
               <Link to="/">Home</Link>
             </li>
             <li
-              className="text-[#1a8756] border-b-2 border-b-transparent hover:text-[#143928] whitespace-nowrap font-medium
-            transition ease-in-out hover:border-b-2 hover:border-b-[#143928]"
+              className="text-[#F8366D] border-b-2 border-b-transparent hover:text-[#3D006B] whitespace-nowrap font-medium
+            transition ease-in-out hover:border-b-2 hover:border-b-[#3D006B]"
             >
               <Link to="/about">About us</Link>
             </li>
             <li
-              className="text-[#1a8756] border-b-2 border-b-transparent hover:text-[#143928] whitespace-nowrap font-medium
-            transition ease-in-out hover:border-b-2 hover:border-b-[#143928]"
+              className="text-[#F8366D] border-b-2 border-b-transparent hover:text-[#3D006B] whitespace-nowrap font-medium
+            transition ease-in-out hover:border-b-2 hover:border-b-[#3D006B]"
             >
               <Link to="/contact">Contact us</Link>
             </li>
             <li
-              className="text-[#1a8756] border-b-2 border-b-transparent hover:text-[#143928] whitespace-nowrap font-medium
-            transition ease-in-out hover:border-b-2 hover:border-b-[#143928]"
+              className="text-[#F8366D] border-b-2 border-b-transparent hover:text-[#3D006B] whitespace-nowrap font-medium
+            transition ease-in-out hover:border-b-2 hover:border-b-[#3D006B]"
             >
               {loggedInUser}
             </li>
             <button
-              className="text-[#1a8756] border-b-2 border-b-transparent hover:text-[#143928] whitespace-nowrap font-medium
-              transition ease-in-out hover:border-b-2 hover:border-b-[#143928]"
+              className="text-[#F8366D] border-b-2 border-b-transparent hover:text-[#3D006B] whitespace-nowrap font-medium
+              transition ease-in-out hover:border-b-2 hover:border-b-[#3D006B]"
               onClick={() => {
                 btnName === "Login"
                   ? setBtnName("Logout")

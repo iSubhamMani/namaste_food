@@ -21,8 +21,8 @@ const RestaurantMenu = () => {
       <div className="w-[60%] px-4 py-8 mx-auto max-w-screen-xl flex flex-col bg-gray-50 rounded-lg shadow-md">
         <div className="res-overview">
           <div className="name-rating flex justify-between items-center">
-            <h2 className="font-semibold text-3xl text-black">{name}</h2>
-            <span className="py-[0.2em] px-2 text-white bg-[#1a8756] font-medium">
+            <h2 className="font-semibold text-3xl text-[#3D006B]">{name}</h2>
+            <span className="py-[0.2em] px-2 text-white bg-[#3D006B] font-medium">
               {avgRating} <i className="fa-solid fa-star"></i>
             </span>
           </div>
@@ -33,7 +33,7 @@ const RestaurantMenu = () => {
               {areaName}
             </span>
             <div>
-              <span className="py-[0.2em] font-bold text-lg flex gap-[0.4em] items-center">
+              <span className="py-[0.2em] font-bold text-lg text-[#3D006B] flex gap-[0.4em] items-center">
                 <i className="fa-solid fa-bolt"></i>
                 {costForTwoMessage}
               </span>

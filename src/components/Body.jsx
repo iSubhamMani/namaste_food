@@ -52,7 +52,7 @@ const Body = () => {
     <div className="body mt-4 mb-[50px]">
       <div className="w-[70%] mx-auto max-w-screen-xl flex flex-col">
         <div className="mt-4 mb-8">
-          <h1 className="font-bold text-2xl text-[#143928] mb-4">
+          <h1 className="font-bold text-2xl text-[#3D006B] mb-4">
             Best offers for you
           </h1>
           <div className="flex gap-4 ">
@@ -74,13 +74,13 @@ const Body = () => {
         </div>
 
         <div>
-          <h1 className="pt-4 font-bold text-2xl text-[#143928] mt-4 mb-2 border-t-[2px] border-t-zinc-200">
+          <h1 className="pt-4 font-bold text-2xl text-[#3D006B] mt-4 mb-2 border-t-[2px] border-t-zinc-200">
             Top Restaurants in Kolkata
           </h1>
           <div className="flex gap-4 my-8 items-center ">
             <div
               className="search-bar border-2 border-zinc-400 px-4 py-1 flex gap-4 justify-between rounded-full
-           focus-within:border-[#1a8756] shadow-md"
+           focus-within:border-[#3D006B] shadow-md"
             >
               <input
                 className="focus:outline-none"
@@ -114,8 +114,8 @@ const Body = () => {
                 style={{ borderRadius: 100 + "px" }}
                 onClick={(e) => {
                   if (e.target.classList.toggle("active")) {
-                    e.target.style.backgroundColor = "#1a8756";
-                    e.target.style.color = "#fef08ad9";
+                    e.target.style.backgroundColor = "#3D006B";
+                    e.target.style.color = "#FFF";
                     const filteredList = listOfRes.filter(
                       (res) => res.info.avgRating >= 4.4
                     );
