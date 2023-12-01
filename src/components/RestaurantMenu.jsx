@@ -18,7 +18,7 @@ const RestaurantMenu = () => {
 
   return (
     <div className="menu py-8 px-4">
-      <div className="w-[60%] px-4 py-8 mx-auto max-w-screen-xl flex flex-col bg-gray-50 rounded-lg shadow-md">
+      <div className="w-[60%] px-4 py-8 mx-auto max-w-screen-xl flex flex-col  rounded-lg shadow-md">
         <div className="res-overview">
           <div className="name-rating flex justify-between items-center">
             <h2 className="font-semibold text-3xl text-[#3D006B]">{name}</h2>

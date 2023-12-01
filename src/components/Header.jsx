@@ -1,9 +1,12 @@
 import { useState } from "react";
 import logo from "../utils/img/logo_128.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
+  //Subscribing to the store
+  const cartItems = useSelector((store) => store.cart.items); // subscribing to a specific portion of the store
 
   return (
     <div className="bg-white p-4 border-b-2 border-gray-40 shadow-lg">
@@ -46,9 +49,12 @@ const Header = () => {
             </li>
             <li
               className="text-[#F8366D] border-b-2 border-b-transparent hover:text-[#3D006B] whitespace-nowrap font-medium
-            transition ease-in-out hover:border-b-2 hover:border-b-[#3D006B]"
+            transition ease-in-out hover:border-b-2 hover:border-b-[#3D006B] flex items-center"
             >
-              Cart
+              <Link to="/cart">
+                <i className="fa-solid fa-cart-shopping"></i>({cartItems.length}
+                )
+              </Link>
             </li>
             <button
               className="text-[#F8366D] border-b-2 border-b-transparent hover:text-[#3D006B] whitespace-nowrap font-medium

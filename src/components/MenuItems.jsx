@@ -1,14 +1,24 @@
+import { useDispatch } from "react-redux";
 import { MEDIA_ASSETS_URL } from "../utils/constants";
+import { addItem } from "../utils/slices/cartSlice";
 
 const MenuItems = (props) => {
   const items = props.data;
+
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    // Dispatch an action
+    dispatch(addItem(item)); // action.payload
+  };
+
   return (
     <ul className="menu-list">
       {items?.map((item) => {
         return (
           <li
             key={item.card?.info?.id}
-            className="menu-item mt-8 flex justify-between hover:bg-slate-200 p-4 rounded-lg transition ease-in-out duration-300
+            className="menu-item mt-8 flex justify-between hover:bg-gray-100 p-4 rounded-lg transition ease-in-out duration-200
                   border-t-2 border-zinc-200"
           >
             <div className="self-start">
@@ -49,7 +59,10 @@ const MenuItems = (props) => {
                 )}
               </div>
               <div className="text-center my-2">
-                <button className="w-full py-1 px-4 hover:cursor-pointer bg-[#3D006B] text-white rounded-full">
+                <button
+                  className="w-full py-1 px-4 hover:cursor-pointer bg-[#3D006B] text-white rounded-full"
+                  onClick={() => handleAddItem(item)}
+                >
                   ADD +
                 </button>
               </div>
