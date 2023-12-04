@@ -17,6 +17,7 @@ const MenuItems = (props) => {
       {items?.map((item) => {
         return (
           <li
+            data-testid="menu-item"
             key={item.card?.info?.id}
             className="menu-item mt-8 flex justify-between hover:bg-gray-100 p-4 rounded-lg transition ease-in-out duration-200
                   border-t-2 border-zinc-200"

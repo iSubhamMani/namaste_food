@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "../utils/img/logo_128.png";
+
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -13,7 +13,7 @@ const Header = () => {
       <div className="w-4/5 mx-auto max-w-screen-xl flex justify-between items-center">
         <div className="flex items-center gap-4">
           <div className="logo-container">
-            <img className="w-16" src={logo} />
+            <img className="w-16" src="" />
           </div>
           <div className="brand-container">
             <h1 className="brand-text whitespace-nowrap text-xl font-medium text-[#F8366D]">
@@ -51,10 +51,7 @@ const Header = () => {
               className="text-[#F8366D] border-b-2 border-b-transparent hover:text-[#3D006B] whitespace-nowrap font-medium
             transition ease-in-out hover:border-b-2 hover:border-b-[#3D006B] flex items-center"
             >
-              <Link to="/cart">
-                <i className="fa-solid fa-cart-shopping"></i>({cartItems.length}
-                )
-              </Link>
+              <Link to="/cart">({cartItems.length})</Link>
             </li>
             <button
               className="text-[#F8366D] border-b-2 border-b-transparent hover:text-[#3D006B] whitespace-nowrap font-medium

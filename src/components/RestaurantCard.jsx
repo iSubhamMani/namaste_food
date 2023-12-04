@@ -3,6 +3,7 @@ import { MEDIA_ASSETS_URL } from "../utils/constants";
 const RestaurantCard = ({ data }) => {
   return (
     <div
+      data-testid="res-card"
       className="res-card shadow-lg min-h-full rounded-lg overflow-hidden transition ease-in-out bg-white
     hover:bg-[#ffebf1] duration-300"
     >

@@ -100,11 +100,15 @@ const Body = () => {
                   setFilteredRes(filteredRes);
                 }}
               >
-                <i className="fa-solid fa-magnifying-glass"></i>
+                <i
+                  data-testid="search-res"
+                  className="fa-solid fa-magnifying-glass"
+                ></i>
               </span>
             </div>
             <div className="top-rated-res">
               <button
+                data-testid="top-rated-btn"
                 className="px-4 py-1 transition ease-in-out shadow-md
                whitespace-nowrap font-medium text-zinc-600
                "
