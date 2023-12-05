@@ -18,22 +18,25 @@ const RestaurantMenu = () => {
 
   return (
     <div className="menu py-8 px-4">
-      <div className="w-[60%] px-4 py-8 mx-auto max-w-screen-xl flex flex-col  rounded-lg shadow-md">
+      <div className="w-[60%] px-4 py-8 mx-auto max-w-screen-xl flex flex-col  rounded-lg shadow-xl border-t-4 border-t-[#F1B4BB]">
         <div className="res-overview">
           <div className="name-rating flex justify-between items-center">
-            <h2 className="font-semibold text-3xl text-[#3D006B]">{name}</h2>
-            <span className="py-[0.2em] px-2 text-white bg-[#3D006B] font-medium">
+            <h2 className="font-bold text-3xl text-[#132043]">{name}</h2>
+            <span className="py-[0.2em] px-2 text-[#FDF0F0] bg-[#1F4172] font-bold">
               {avgRating} <i className="fa-solid fa-star"></i>
             </span>
           </div>
           <div className="food-overview flex flex-col gap-1 mt-4 mb-[50px]">
-            <span className="text-zinc-600 ">{cuisines?.join(", ")}</span>
-            <span className="text-zinc-600 font-medium flex gap-[0.4em] items-center">
+            <span className="text-zinc-600 font-semibold ">
+              <i className="fa-solid fa-bowl-food font-semibold"></i>{" "}
+              {cuisines?.join(", ")}
+            </span>
+            <span className="text-zinc-600 font-semibold flex gap-[0.4em] items-center">
               <i className="fa-solid fa-location-dot"></i>
               {areaName}
             </span>
             <div>
-              <span className="py-[0.2em] font-bold text-lg text-[#3D006B] flex gap-[0.4em] items-center">
+              <span className="py-[0.2em] font-bold text-lg text-[#1F4172] flex gap-[0.4em] items-center">
                 <i className="fa-solid fa-bolt"></i>
                 {costForTwoMessage}
               </span>

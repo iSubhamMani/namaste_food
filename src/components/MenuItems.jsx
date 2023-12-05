@@ -19,11 +19,11 @@ const MenuItems = (props) => {
           <li
             data-testid="menu-item"
             key={item.card?.info?.id}
-            className="menu-item mt-8 flex justify-between hover:bg-gray-100 p-4 rounded-lg transition ease-in-out duration-200
+            className="menu-item mt-8 flex justify-between p-4 rounded-lg transition ease-in-out duration-200
                   border-t-2 border-zinc-200"
           >
             <div className="self-start">
-              <h3 className="text-lg font-medium text-[#F8366D]">
+              <h3 className="text-lg font-bold text-[#1F4172]">
                 {item.card?.info?.name}
               </h3>
               <div className="flex flex-col  gap-[0.4em]">
@@ -33,18 +33,18 @@ const MenuItems = (props) => {
                     100}
                 </span>
                 <div className="flex items-center gap-2">
-                  <span className="py-[0.2em] px-2 text-white bg-[#3D006B] font-medium text-sm flex gap-1 items-center">
+                  <span className="py-[0.2em] px-2 text-[#FDF0F0] bg-[#1F4172] font-bold text-sm flex gap-1 items-center">
                     {item.card?.info?.ratings?.aggregatedRating?.rating}
                     <i className="fa-solid fa-star"></i>
                   </span>
-                  <span className="font-medium text-sm">
+                  <span className="font-bold text-sm text-[#132043]">
                     {item.card?.info?.ratings?.aggregatedRating?.ratingCount}
                   </span>
                 </div>
               </div>
             </div>
             <div>
-              <div className="w-32 h-32 rounded-lg overflow-hidden">
+              <div className="w-32 h-32 rounded-lg overflow-hidden shadow-lg">
                 {item.card?.info?.imageId !== undefined ? (
                   <img
                     src={MEDIA_ASSETS_URL + item.card?.info?.imageId}
@@ -61,7 +61,7 @@ const MenuItems = (props) => {
               </div>
               <div className="text-center my-2">
                 <button
-                  className="w-full py-1 px-4 hover:cursor-pointer bg-[#3D006B] text-white rounded-full"
+                  className="w-full py-1 px-4 hover:cursor-pointer bg-[#FDF0F0] text-[#fb4157] font-medium rounded-full shadow-lg border-2 border-[#fb4157] hover:bg-[#F1B4BB] transition ease-in-out duration-300"
                   onClick={() => handleAddItem(item)}
                 >
                   ADD +

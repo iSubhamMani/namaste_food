@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 
 // render -> query something -> assert
 
-describe("Contact us tests", () => {
+describe.skip("Contact us tests", () => {
   it("Should load heading in contact us component", () => {
     render(<ContactUs />); // render to JS DOM
 

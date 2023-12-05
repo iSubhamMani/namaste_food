@@ -11,16 +11,16 @@ const Cart = () => {
   };
 
   return (
-    <div className="mt-8 mb-[50px] w-[60%] px-4 py-8 mx-auto max-w-screen-xl  rounded-lg shadow-md">
+    <div className="mt-8 mb-[50px] w-[60%] px-4 py-8 mx-auto max-w-screen-xl border-t-4 border-t-[#F1B4BB] rounded-lg shadow-xl">
       <div className="flex justify-between items-center">
-        <h1 className="font-bold text-2xl text-[#3D006B]">
+        <h1 className="font-bold text-2xl text-[#132043]">
           {cartItems.length === 0
             ? "Cart Empty!"
             : `Cart Items (${cartItems.length})`}
         </h1>
 
         <button
-          className="font-medium text-sm bg-[#3D006B] text-white py-2 px-4 rounded-full"
+          className="font-semibold text-sm bg-[#132043] text-[#FDF0F0] py-2 px-4 rounded-full"
           onClick={handleClearCart}
         >
           Clear Cart

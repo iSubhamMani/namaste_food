@@ -49,7 +49,7 @@ const Body = () => {
     <div className="body mt-4 mb-[50px]">
       <div className="w-[70%] mx-auto max-w-screen-xl flex flex-col">
         <div className="mt-4 mb-8">
-          <h1 className="font-bold text-2xl text-[#3D006B] mb-4">
+          <h1 className="font-bold text-2xl text-[#132043] mb-4">
             Best offers for you
           </h1>
           <div className="flex gap-4 ">
@@ -71,13 +71,13 @@ const Body = () => {
         </div>
 
         <div>
-          <h1 className="pt-4 font-bold text-2xl text-[#3D006B] mt-4 mb-2 border-t-[2px] border-t-zinc-200">
+          <h1 className="pt-4 font-bold text-2xl text-[#132043] mt-4 mb-2 border-t-[2px] border-t-zinc-200">
             Top Restaurants in Kolkata
           </h1>
           <div className="flex gap-4 my-8 items-center ">
             <div
               className="search-bar border-2 border-zinc-400 px-4 py-1 flex gap-4 justify-between rounded-full
-           focus-within:border-[#3D006B] shadow-md"
+           focus-within:border-[#132043] shadow-md"
             >
               <input
                 className="focus:outline-none"
@@ -110,20 +110,21 @@ const Body = () => {
               <button
                 data-testid="top-rated-btn"
                 className="px-4 py-1 transition ease-in-out shadow-md
-               whitespace-nowrap font-medium text-zinc-600
+               whitespace-nowrap font-medium text-[#fb4157] bg-[#FDF0F0] border-2 border-[#fb4157]
                "
                 style={{ borderRadius: 100 + "px" }}
                 onClick={(e) => {
                   if (e.target.classList.toggle("active")) {
-                    e.target.style.backgroundColor = "#3D006B";
+                    e.target.style.backgroundColor = "#fb4157";
                     e.target.style.color = "#FFF";
+
                     const filteredList = listOfRes.filter(
                       (res) => res.info.avgRating >= 4.4
                     );
                     setFilteredRes(filteredList);
                   } else {
-                    e.target.style.backgroundColor = "transparent";
-                    e.target.style.color = "rgb(82,82,91)";
+                    e.target.style.backgroundColor = "#FDF0F0";
+                    e.target.style.color = "#fb4157";
                     setFilteredRes(listOfRes);
                   }
                 }}

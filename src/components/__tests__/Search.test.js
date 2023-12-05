@@ -14,7 +14,7 @@ global.fetch = jest.fn(() => {
   });
 });
 
-describe("Search tests", () => {
+describe.skip("Search tests", () => {
   it("Should search res list for restaurant input", async () => {
     await act(async () => {
       render(

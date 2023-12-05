@@ -15,6 +15,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import "../fonts.css";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
